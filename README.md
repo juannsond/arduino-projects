@@ -1,27 +1,32 @@
-# arduino-projects
-my creation 
 # Allarme Arduino Ultrasuoni
 
-Progetto Arduino che utilizza un sensore ad ultrasuoni per rilevare oggetti vicini.  
-Quando qualcosa si avvicina entro la distanza impostata, il sistema:
+Progetto Arduino con sensore ad ultrasuoni HC-SR04 che rileva oggetti vicini.  
+Quando un oggetto entra nell’area di rilevamento:
 
-- Accende il LED rosso
-- Suona un allarme dinamico (più vicino → suono più acuto e veloce)
-- Quando non ci sono oggetti vicini, il LED verde rimane acceso
+- LED rosso acceso  
+- Buzzer dinamico (più vicino → suono più acuto e veloce)  
+- LED verde acceso quando non ci sono oggetti
 
-## Componenti utilizzati
-- Arduino Uno / Elegoo R3
-- Sensore ad ultrasuoni HC-SR04
-- LED rosso e verde
-- Buzzer
+## Componenti
+- Arduino Uno / Elegoo R3  
+- HC-SR04  
+- LED rosso e verde  
+- Buzzer  
+- Resistenze 220Ω  
+- Cavi jumper e breadboard
 
-## Come usare
-1. Collegare i componenti secondo lo schema indicato nel codice.
-2. Caricare lo sketch `.ino` su Arduino.
-3. Aprire il monitor seriale per vedere la distanza rilevata.
-4. Avvicinarsi agli oggetti e osservare il comportamento del LED e del buzzer.
+## Schema collegamenti
+- VCC HC-SR04 → 5V  
+- GND HC-SR04 → GND  
+- TRIG → Pin 3  
+- ECHO → Pin 2  
+- LED verde → Pin 7  
+- LED rosso → Pin 8  
+- Buzzer → Pin 9
 
-## Note
-- Distanza minima ignorata: 5 cm  
-- Distanza massima per allarme: 50 cm  
-- Frequenza del buzzer varia in base alla distanza
+## Uso
+1. Collega i componenti come indicato.  
+2. Carica lo sketch `.ino` su Arduino.  
+3. Apri il Monitor Serial per vedere la distanza.  
+4. Avvicinati agli oggetti e osserva il comportamento di LED e buzzer.
+
