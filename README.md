@@ -1,27 +1,65 @@
-# arduino-projects
-my creation 
-# Allarme Arduino Ultrasuoni
+# Allarme Arduino Ultrasuoni – Progetto Avanzato
 
-Progetto Arduino che utilizza un sensore ad ultrasuoni per rilevare oggetti vicini.  
-Quando qualcosa si avvicina entro la distanza impostata, il sistema:
+Progetto Arduino che utilizza un **sensore ad ultrasuoni HC-SR04** per rilevare oggetti vicini e generare un **allarme dinamico**.  
+Quando un oggetto entra nell’area di rilevamento, il sistema:
 
-- Accende il LED rosso
-- Suona un allarme dinamico (più vicino → suono più acuto e veloce)
-- Quando non ci sono oggetti vicini, il LED verde rimane acceso
+- Accende il **LED rosso**  
+- Suona un **buzzer dinamico** (più vicino → suono più acuto e veloce)  
+- Quando non ci sono oggetti vicini, il **LED verde** rimane acceso
+
+---
 
 ## Componenti utilizzati
-- Arduino Uno / Elegoo R3
-- Sensore ad ultrasuoni HC-SR04
-- LED rosso e verde
-- Buzzer
+
+- Arduino Uno / Elegoo R3  
+- Sensore ad ultrasuoni HC-SR04  
+- LED rosso e verde  
+- Buzzer  
+- Resistenze da 220Ω per i LED (consigliato)  
+- Cavi jumper e breadboard
+
+---
+
+## Schema dei collegamenti
+
+- **VCC HC-SR04 → 5V Arduino**  
+- **GND HC-SR04 → GND Arduino**  
+- **TRIG HC-SR04 → Pin 3 Arduino**  
+- **ECHO HC-SR04 → Pin 2 Arduino**  
+- **LED verde → Pin 7**  
+- **LED rosso → Pin 8**  
+- **Buzzer → Pin 9**
+
+> Puoi aggiungere qui un’immagine o un diagramma della breadboard, ad esempio:  
+> `![Schema breadboard](link-alla-tua-immagine.jpg)`
+
+---
 
 ## Come usare
-1. Collegare i componenti secondo lo schema indicato nel codice.
-2. Caricare lo sketch `.ino` su Arduino.
-3. Aprire il monitor seriale per vedere la distanza rilevata.
-4. Avvicinarsi agli oggetti e osservare il comportamento del LED e del buzzer.
+
+1. Collega tutti i componenti secondo lo schema sopra.  
+2. Apri Arduino IDE e carica lo sketch `.ino` su Arduino.  
+3. Apri il **Monitor Serial** per vedere la distanza rilevata in cm.  
+4. Avvicinati agli oggetti e verifica il comportamento dei LED e del buzzer.
+
+---
+
+## Parametri regolabili
+
+- `distanza_min` → distanza minima ignorata (cm)  
+- `distanza_max` → distanza massima per attivare l’allarme (cm)  
+- Frequenza del buzzer → varia dinamicamente in base alla distanza rilevata
+
+---
 
 ## Note
-- Distanza minima ignorata: 5 cm  
-- Distanza massima per allarme: 50 cm  
-- Frequenza del buzzer varia in base alla distanza
+
+- Funziona meglio con oggetti solidi e superfici riflettenti.  
+- Evita ostacoli troppo vicini (<5 cm) per non generare falsi allarmi.  
+- Il progetto può essere esteso aggiungendo display, più LED, o un sistema di registrazione dei dati.
+
+---
+
+## Licenza
+
+Puoi usare e modificare liberamente questo progetto.  
